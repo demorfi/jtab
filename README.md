@@ -1,11 +1,11 @@
 # JTab
 -------
-JTab is “Displays content in tabs for a framework JQuery” [Check out the demo](https://demorfi.github.io/jtab)
+This is “Displays content in tabs for jQuery” framework” [Check out the demo](https://demorfi.github.io/jtab)
 
 Required
 ========
 * jQuery framework >= 1.8
-* [* Java for build]
+* [* JRE for build]
 
 Features
 ========
@@ -163,8 +163,8 @@ Change Log
 ==========
 v1.0 - Mar 09, 2015
 --------------------
- * Initialize repository version 1.0
+ * Initialize version 1.0
 
 License
 =======
-JiS is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+This is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
