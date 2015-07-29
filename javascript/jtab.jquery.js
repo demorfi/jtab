@@ -1,5 +1,5 @@
 /*!
- * JTab is “Displays content in tabs for a framework JQuery”.
+ * JTab is “Displays content in tabs for jQuery framework”.
  *
  * @author demorfi <demorfi@gmail.com>
  * @version 1.0
@@ -13,25 +13,25 @@
      * Initialize.
      *
      * @param {object} [options] Available options
-     * @param {number} options.start Start init tab
-     * @param {boolean|object} options.params Additional data to be ajax sent
-     * @param {boolean} options.trackingHash Tracking browser url - hash
-     * @param {object} options.callback Callback functions
-     * @param {function} options.callback.init Callback init tab
-     * @param {function} options.callback.trigger Callback trigger callback function
-     * @param {function} options.callback.change Callback change tab
-     * @param {function} options.callback.select Callback select tab
-     * @param {function} options.callback.content Callback loading content in tab
-     * @param {function} options.callback.hash Callback change browser url - hash
-     * @param {object} options.animate Animate change tab effect
-     * @param {function} options.animate.open Animate effect open tab
-     * @param {function} options.animate.close Animate effect close tab
-     * @param {object} options.class Used css class list
-     * @param {string} options.class.wrapper Use class for element jtab-wrapper
-     * @param {string} options.class.navigList Use class for element jtab-navig-list
-     * @param {string} options.class.selected Use class for element jtab-selected
-     * @param {string} options.class.content Use class for element jtab-content
-     * @param {string} options.class.loading Use class for element jtab-loading
+     * @param {number} [options.start] Start init tab
+     * @param {boolean|object} [options.params] Additional data to be ajax sent
+     * @param {boolean} [options.trackingHash] Tracking browser url - hash
+     * @param {object} [options.callback] Callback functions
+     * @param {function} [options.callback.init] Callback init tab
+     * @param {function} [options.callback.trigger] Callback trigger callback function
+     * @param {function} [options.callback.change] Callback change tab
+     * @param {function} [options.callback.select] Callback select tab
+     * @param {function} [options.callback.content] Callback loading content in tab
+     * @param {function} [options.callback.hash] Callback change browser url - hash
+     * @param {object} [options.animate] Animate change tab effect
+     * @param {function} [options.animate.open] Animate effect open tab
+     * @param {function} [options.animate.close] Animate effect close tab
+     * @param {object} [options.class] Used css class list
+     * @param {string} [options.class.wrapper] Use class for element jtab-wrapper
+     * @param {string} [options.class.navigList] Use class for element jtab-navig-list
+     * @param {string} [options.class.selected] Use class for element jtab-selected
+     * @param {string} [options.class.content] Use class for element jtab-content
+     * @param {string} [options.class.loading] Use class for element jtab-loading
      * @return {object} jtab
      */
     $.fn.jtab = function (options)
@@ -47,24 +47,24 @@
      *
      * @param {object} el <ul> html element
      * @param {object} [options] Available options
-     * @param {number} options.start Start init tab
-     * @param {boolean|object} options.params Additional data to be ajax sent
-     * @param {boolean} options.trackingHash Tracking browser url - hash
-     * @param {object} options.callback Callback functions
-     * @param {function} options.callback.init Callback init tab
-     * @param {function} options.callback.trigger Callback trigger callback function
-     * @param {function} options.callback.change Callback change tab
-     * @param {function} options.callback.select Callback select tab
-     * @param {function} options.callback.content Callback loading content in tab
-     * @param {function} options.callback.hash Callback change browser url - hash
-     * @param {object} options.animate Animate change tab effect
-     * @param {boolean|function} options.animate.open Animate effect open tab
-     * @param {boolean|function} options.animate.close Animate effect close tab
-     * @param {object} options.class Used css class list
-     * @param {string} options.class.wrapper Use class for element jtab-wrapper
-     * @param {string} options.class.selected Use class for element jtab-selected
-     * @param {string} options.class.content Use class for element jtab-content
-     * @param {string} options.class.loading Use class for element jtab-loading
+     * @param {number} [options.start] Start init tab
+     * @param {boolean|object} [options.params] Additional data to be ajax sent
+     * @param {boolean} [options.trackingHash] Tracking browser url - hash
+     * @param {object} [options.callback] Callback functions
+     * @param {function} [options.callback.init] Callback init tab
+     * @param {function} [options.callback.trigger] Callback trigger callback function
+     * @param {function} [options.callback.change] Callback change tab
+     * @param {function} [options.callback.select] Callback select tab
+     * @param {function} [options.callback.content] Callback loading content in tab
+     * @param {function} [options.callback.hash] Callback change browser url - hash
+     * @param {object} [options.animate] Animate change tab effect
+     * @param {boolean|function} [options.animate.open] Animate effect open tab
+     * @param {boolean|function} [options.animate.close] Animate effect close tab
+     * @param {object} [options.class] Used css class list
+     * @param {string} [options.class.wrapper] Use class for element jtab-wrapper
+     * @param {string} [options.class.selected] Use class for element jtab-selected
+     * @param {string} [options.class.content] Use class for element jtab-content
+     * @param {string} [options.class.loading] Use class for element jtab-loading
      * @private
      * @constructor
      * @return {object} this
@@ -204,7 +204,6 @@
                     'parent': this
                 }));
 
-                // init callback
                 $self.getCallback('init').call($self, {
                     'self': this
                 });
@@ -305,6 +304,12 @@
             return ($.isFunction(this.options.animate[name]) ? this.options.animate[name] : $.noop);
         },
 
+        /**
+         * Has animate function.
+         *
+         * @param {string} name Animate id
+         * @return {boolean}
+         */
         hasAnimate: function (name)
         {
             return ($.isFunction(this.options.animate[name]));
@@ -357,7 +362,6 @@
                         ? this.getAnimate('open').call(this, $self) : $self.show());
                 }
 
-                // loading content
                 this.getCallback('content').call(this, {
                     'self': $self,
                     'ref' : ref,
