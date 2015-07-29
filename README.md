@@ -1,6 +1,6 @@
 # JTab
 -------
-This is “Displays content in tabs for jQuery” framework” [Check out the demo](https://demorfi.github.io/jtab)
+This is “Displays content in tabs for jQuery framework” [Check out the demo](https://demorfi.github.io/jtab)
 
 Required
 ========
