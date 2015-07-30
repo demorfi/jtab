@@ -1,5 +1,5 @@
 /*!
- * JTab is “Displays content in tabs for jQuery framework”.
+ * jTab is “Displays content in tabs for jQuery framework”.
  *
  * @author demorfi <demorfi@gmail.com>
  * @version 1.0
