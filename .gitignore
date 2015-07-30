@@ -1,5 +1,4 @@
-# OS generated files #
-######################
+### OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -9,8 +8,13 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# User specific & automatically generated files #
-#################################################
-/vendor/*
-!/vendor/
+### User specific & automatically generated files
+/toolchain
 /builds
+/.sass-cache
+
+### JetBrains
+.idea/
+
+### SVN
+.svn/
