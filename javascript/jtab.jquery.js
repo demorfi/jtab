@@ -109,6 +109,7 @@
                         this.toggleTab(this.getTabId(event.currentTarget));
                         this.getCallback('trigger').call(this, data, 'select');
                     }
+                    return (false);
                 },
 
                 /**
@@ -222,7 +223,7 @@
         {
             $(window).on('hashchange', $.proxy(function ()
             {
-                var id = location.hash;
+                var id = location.hash.replace(/^#!/, '#');
 
                 // change hash callback
                 if (this.$el.find('[href="' + this.getTabIdHref(id) + '"]').length) {
@@ -353,6 +354,8 @@
                 .addClass(this.getClass('selected')).data('jtabCurrent', true).data('content');
 
             if (!$.isEmptyObject($self)) {
+				location.hash = id.replace(/^#/, '#!');
+
                 $self.addClass(this.getClass('selected'));
                 this.getCallback('trigger').call(this, $self, 'open');
 
